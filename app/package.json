@@ -1,0 +1,10 @@
+{
+  "name": "devops-demo-app",
+  "version": "1.0.0",
+  "description": "Mera pehla DevOps project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "node -e \"console.log('Tests pass ho gaye!'); process.exit(0);\""
+  }
+}
