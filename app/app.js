@@ -1,13 +1,14 @@
 const http = require('http');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+const MESSAGE = process.env.APP_MESSAGE || 'Default message';
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'application/json' });
 
   const response = {
-    message: 'Mera pehla DevOps app chal raha hai!',
-    message: 'Version 2.0 - Main update ho gaya!',
+    message: MESSAGE,
+    environment: process.env.NODE_ENV,
     time: new Date().toISOString()
   };
 
@@ -15,5 +16,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log('App chal rahi hai port 3000 par!');
+  console.log(`App chal rahi hai port ${PORT} par!`);
 });
